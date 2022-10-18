@@ -1,0 +1,92 @@
+{
+  "name": "@lucksp/lerna",
+  "private": true,
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucksp/lerna-pkg.git"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "pkg": "manypkg run",
+    "check:pkgs": "manypkg check",
+    "fix:pkgs": "manypkg fix",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "boot": "yarn && yarn bootstrap && yarn build",
+    "prestart": "yarn && yarn bootstrap",
+    "build": "lerna run build --no-private --stream",
+    "build:pkg": "lerna run build --scope ",
+    "test": "lerna run test --no-private --stream",
+    "test:watch": "jest test:watch",
+    "lint": "lerna run lint --stream",
+    "lint:fix": "lerna run lint:fix --stream",
+    "lint:types": "lerna exec --parallel \"tsc --noEmit\"",
+    "bundlesize": "bundlesize -c bundlesize.config.json",
+    "changelog": "lerna-changelog",
+    "release:rc": "lerna publish --conventional-prerelease --dist-tag next --preid rc --no-changelog",
+    "release": "lerna publish --conventional-graduate",
+    "clean": "lerna clean --yes && rm -rf node_modules && rm -rf packages/**/dist",
+    "mobile": "yarn workspace @lucksp/mobile",
+    "mobile-maps": "yarn workspace @lucksp/mobile-maps",
+    "prepare": "husky install",
+    "precommit": "lerna run --concurrency 1 --stream precommit --since HEAD --exclude-dependents",
+    "prettier": "prettier --write"
+  },
+  "dependencies": {
+    "@babel/cli": "7.18.10",
+    "@babel/core": "7.18.9",
+    "@babel/preset-env": "7.16.11",
+    "@babel/preset-react": "7.13.13",
+    "@babel/preset-typescript": "^7.16.0",
+    "@babel/runtime": "7.19.0",
+    "@commitlint/cli": "17.0.3",
+    "@commitlint/config-conventional": "17.0.3",
+    "@lucksp/mobile": "^1.0.0",
+    "@manypkg/cli": "0.19.1",
+    "@rneui/base": "github:react-native-elements/react-native-elements#base",
+    "@rneui/themed": "github:react-native-elements/react-native-elements#themed",
+    "@types/node": "16.11.10",
+    "@types/react": "17.0.37",
+    "@types/react-dom": "17.0.9",
+    "@typescript-eslint/eslint-plugin": "5.31.0",
+    "@typescript-eslint/parser": "5.36.2",
+    "bundlesize": "0.18.1",
+    "concurrently": "5.3.0",
+    "cross-env": "7.0.3",
+    "eslint": "7.32.0",
+    "eslint-plugin-react": "7.30.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "eslint-plugin-typescript-sort-keys": "2.1.0",
+    "husky": "8.0.1",
+    "lerna": "4.0.0",
+    "lerna-changelog": "2.1.0",
+    "lint-staged": "13.0.3",
+    "prettier": "2.7.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native-maps": "1.3.2",
+    "rimraf": "3.0.2",
+    "typescript": "^4.8.4"
+  },
+  "resolutions": {
+    "**/react": "17.0.2",
+    "**/react-dom": "17.0.2"
+  },
+  "description": "A copy of a mobile React Native based component library, ideally with Expo.",
+  "bugs": {
+    "url": "https://github.com/lucksp/lerna-pkg/issues"
+  },
+  "homepage": "https://github.com/lucksp/lerna-pkg#readme",
+  "main": "babel.config.js",
+  "devDependencies": {},
+  "author": "Philip Lucks",
+  "license": "ISC"
+}

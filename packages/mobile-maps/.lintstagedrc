@@ -1,0 +1,8 @@
+{
+  "**/*.ts?(x)": [
+    "yarn lint:fix"
+  ],
+  "**/*.{md,mdx,yml,json}": [
+    "prettier --write"
+  ]
+}

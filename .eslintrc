@@ -1,0 +1,93 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "typescript-sort-keys",
+    "simple-import-sort"
+  ],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:typescript-sort-keys/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    // Import Sorting (to keep our imports organized)
+    "sort-imports": "off",
+    "import/order": "off",
+    "import/prefer-default-export": "off",
+    "simple-import-sort/imports": "error",
+
+    // Core
+    "arrow-parens": ["error", "always"],
+    "camelcase": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "jsx-quotes": ["error", "prefer-double"],
+    "max-len": ["warn", { "code": 90, "ignoreComments": true }],
+    "no-console": "error",
+    "no-debugger": "error",
+    "no-nested-ternary": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": ["error", { "allowTernary": true }],
+    "object-curly-spacing": ["error", "always"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+
+    // React
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "off",
+    "react/jsx-closing-bracket-location": ["error", "line-aligned"],
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".ts", ".tsx"] }
+    ],
+    "react/jsx-no-comment-textnodes": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-sort-props": "warn",
+    "react/no-array-index-key": "off",
+    "react/no-children-prop": "warn",
+    "react/no-unescaped-entities": "off",
+    "react/require-default-props": "off",
+    "react/self-closing-comp": "error",
+
+    // TypeScript ESLint
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off", // This should be turned on to enforce strict types.
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        }
+      }
+    ],
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "ignoreRestSiblings": true
+      }
+    ]
+  }
+}

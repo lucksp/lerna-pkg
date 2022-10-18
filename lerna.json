@@ -1,0 +1,26 @@
+{
+  "command": {
+    "publish": {
+      "allowBranch": ["main"],
+      "conventionalCommits": true,
+      "ignoreChanges": ["**/__tests__/**"],
+      "message": "chore(release): publish %s"
+    }
+  },
+  "exact": true,
+  "npmClient": "yarn",
+  "packages": ["packages/*"],
+  "changelog": {
+    "labels": {
+      "breaking": ":boom: Breaking Change",
+      "enhancement": ":sparkles: Enhancement",
+      "bug": ":bug: Bug Fix",
+      "docs": ":memo: Documentation",
+      "features": ":rocket: Features",
+      "internal": ":house: Internal"
+    },
+    "cacheDir": ".changelog"
+  },
+  "useWorkspaces": true,
+  "version": "1.0.0"
+}

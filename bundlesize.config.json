@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "path": "packages/button/dist/esm/*.js",
+      "maxSize": "2 kB"
+    },
+    {
+      "path": "packages/core/dist/esm/*.js",
+      "maxSize": "2 kB"
+    },
+    {
+      "path": "packages/layout/dist/esm/*.js",
+      "maxSize": "2 kB"
+    },
+    {
+      "path": "packages/spinner/dist/esm/*.js",
+      "maxSize": "2 kB"
+    },
+    {
+      "path": "packages/theme/dist/esm/*.js",
+      "maxSize": "1 kB"
+    }
+  ]
+}
